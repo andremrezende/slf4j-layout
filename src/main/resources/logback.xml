@@ -1,0 +1,19 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+                    <pattern>
+                        %yellow([%marker]%n) %X{customer} - [%d{HH:mm}] [%d{ss.SSS}s] [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n
+                    </pattern>
+        </encoder>
+<!--        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">-->
+<!--            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">-->
+<!--                <expression>return logger.contains("example");</expression>-->
+<!--            </evaluator>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+    </appender>
+    <root>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
